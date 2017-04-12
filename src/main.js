@@ -1,13 +1,20 @@
+/**
+ * File Name: workplace/proj/src/main.js
+ * Created By: bobo2007
+ * Creation Date: 2017-04-12 13:25:27
+ * Last Modified: 2017-04-12 13:25:19
+ * Purpose: main 入口文件
+ */
+
+
 import 'babel-polyfill';
 import 'whatwg-fetch';
-
 import React from 'react';
 import ReactDom from 'react-dom';
 import FastClick from 'fastclick';
 import {
   Provider
 } from 'react-redux';
-
 import store from './store';
 import router from './router';
 import history from './history';
@@ -34,7 +41,6 @@ function render(location) {
 history.listen(render);
 // render current location
 render(history.loaction);
-
 FastClick.attach(document.body);
 
 // enable HMR

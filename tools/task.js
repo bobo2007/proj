@@ -1,3 +1,11 @@
+/**
+ * File Name: tools/task.js
+ * Created By: bobo2007
+ * Creation Date: 2017-04-12 13:49:16
+ * Last Modified: 2017-04-12 13:49:16
+ * Purpose:
+ */
+
 function run(task, action, ...args) {
   const command = process.argv[2];
   const taskName = command && !command.startsWith('-') ? `${task}:${command}` : task;

@@ -1,11 +1,19 @@
-const path = require('path');
-const webpack = require('webpack');
-const AssetsPlugin = require('assets-webpack-plugin');
-const pkg = require('../package.json');
+/**
+ * File Name: tools/webpack.config.js
+ * Created By: bobo2007
+ * Creation Date: 2017-04-12 13:48:19
+ * Last Modified: 2017-04-12 13:48:39
+ * Purpose:
+ */
 
-const isDebug = global.DEBUG === false ? false : !process.argv.includes('--release');
-const isVerbose = process.argv.includes('--verbose') || process.argv.includes('-v');
-const useHMR = Boolean(global.HMR); // Hot Module Replacement (HMR)
+const path     = require('path');
+const webpack   = require('webpack');
+const AssetsPlugin = require('assets-webpack-plugin');
+const pkg     = require('../package.json');
+
+const isDebug   = global.DEBUG === false ? false : !process.argv.includes('--release');
+const isVerbose  = process.argv.includes('--verbose') || process.argv.includes('-v');
+const useHMR    = Boolean(global.HMR); // Hot Module Replacement (HMR)
 const babelConfig = Object.assign({}, pkg.babel, {
   babelrc: false,
   cacheDirectory: useHMR,
@@ -77,19 +85,19 @@ const config = {
   // Options affecting the normal modules
   module: {
     rules: [{
-        test: /\.jsx?$/,
-        include: [
-          path.resolve(__dirname, '../src'),
-          path.resolve(__dirname, '../components')
-        ],
-        loader: 'babel-loader',
-        options: babelConfig
-      },
+      test: /\.jsx?$/,
+      include: [
+        path.resolve(__dirname, '../src'),
+        path.resolve(__dirname, '../components')
+      ],
+      loader: 'babel-loader',
+      options: babelConfig
+    },
       {
         test: /\.css/,
         use: [{
-            loader: 'style-loader'
-          },
+          loader: 'style-loader'
+        },
           {
             loader: 'css-loader',
             options: {
@@ -123,9 +131,9 @@ const config = {
           path.resolve(__dirname, '../src/routes.json')
         ],
         use: [{
-            loader: 'babel-loader',
-            options: babelConfig
-          },
+          loader: 'babel-loader',
+          options: babelConfig
+        },
           {
             loader: path.resolve(__dirname, './routes-loader.js')
           }
