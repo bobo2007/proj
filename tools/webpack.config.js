@@ -1,10 +1,10 @@
 /**
- * File Name: tools/webpack.config.js
- * Created By: bobo2007
- * Creation Date: 2017-04-12 13:48:19
- * Last Modified: 2017-04-12 13:48:39
- * Purpose:
- */
+* File Name: tools/webpack.config.js
+  * Created By: bobo2007
+  * Creation Date: 2017-04-12 13:48:19
+  * Last Modified: 2017-04-12 18:25:32
+  * Purpose:
+  */
 
 const path     = require('path');
 const webpack   = require('webpack');
@@ -17,11 +17,8 @@ const useHMR    = Boolean(global.HMR); // Hot Module Replacement (HMR)
 const babelConfig = Object.assign({}, pkg.babel, {
   babelrc: false,
   cacheDirectory: useHMR,
-  presets: pkg.babel.presets.map(x => x === 'latest' ? ['latest', {
-    es2015: {
-      modules: false
-    }
-  }] : x)
+  presets: pkg.babel.presets.map(x => x === 'env' ? ['env', {'modules': false}] : x )
+  // Webpack 2 has built-in support for ES2015 modules, and you won’t need to re-require your app root in module.hot.accept.
 });
 
 // Webpack configuration (main.js => public/dist/main.{hash}.js)
@@ -94,27 +91,15 @@ const config = {
       options: babelConfig
     },
       {
-        test: /\.css/,
+        test: /\.less/,
         use: [{
-          loader: 'style-loader'
+          loader: 'style-loader' // // creates style nodes from JS strings
         },
           {
-            loader: 'css-loader',
-            options: {
-              sourceMap: isDebug,
-              importLoaders: true,
-              // CSS Modules https://github.com/css-modules/css-modules
-              modules: true,
-              localIdentName: isDebug ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]',
-              // CSS Nano http://cssnano.co/options/
-              minimize: !isDebug
-            }
+            loader: 'css-loader', // translates CSS into CommonJS
           },
           {
-            loader: 'postcss-loader',
-            options: {
-              config: './tools/postcss.config.js'
-            }
+            loader: 'less-loader',
           }
         ]
       },

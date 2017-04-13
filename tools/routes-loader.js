@@ -2,7 +2,7 @@
  * File Name: tools/routes-loader.js
  * Created By: bobo2007
  * Creation Date: 2017-04-12 13:48:57
- * Last Modified: 2017-04-12 13:48:57
+ * Last Modified: 2017-04-13 11:16:33
  * Purpose:
  */
 
@@ -33,7 +33,7 @@ module.exports = function routesLoader(source) {
       } catch(err){
         reject(err);
       }
-	  })`;
+    })`;
     output.push('   {\n');
     output.push(`       path: '${escape(route.path)}',\n`);
     output.push(`       pattern: ${pattern.toString()},\n`);
