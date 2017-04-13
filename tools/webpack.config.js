@@ -1,10 +1,10 @@
 /**
-* File Name: tools/webpack.config.js
-  * Created By: bobo2007
-  * Creation Date: 2017-04-12 13:48:19
-  * Last Modified: 2017-04-12 18:25:32
-  * Purpose:
-  */
+ * File Name: tools/webpack.config.js
+ * Created By: bobo2007
+ * Creation Date: 2017-04-12 13:48:19
+ * Last Modified: 2017-04-13 13:44:45
+ * Purpose:
+ */
 
 const path     = require('path');
 const webpack   = require('webpack');

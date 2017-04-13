@@ -1,12 +1,12 @@
 /**
- * File Name: workplace/proj/src/router.js
- * Created By: bobo2007
- * Creation Date: 2017-04-12 13:24:11
- * Last Modified: 2017-04-12 13:24:11
- * Purpose: router
- */
+* File Name: workplace/proj/src/router.js
+  * Created By: bobo2007
+  * Creation Date: 2017-04-12 13:24:11
+  * Last Modified: 2017-04-13 15:02:37
+  * Purpose: router
+  */
 
-import react from 'react';
+  import react from 'react';
 
 function decodeParam(val) {
   if (!(typeof val === 'string' || val.length === 0)) {
