@@ -1,3 +1,11 @@
+/**
+ * File Name: tools/run.js
+ * Created By: bobo2007
+ * Creation Date: 2017-04-14 01:21:24
+ * Last Modified: 2017-04-14 01:25:12
+ * Purpose:
+ */
+
 const fs = require('fs');
 const ejs = require('ejs');
 const rimraf = require('rimraf');
@@ -58,4 +66,3 @@ module.exports = task('run', () => new Promise((resolve) => {
   });
 }
 ));
-

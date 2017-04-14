@@ -10,6 +10,9 @@ public/sitemap.xml
 node_modules
 npm-debug.log
 
+# yarn
+yarn-error.log
+
 # Firebase
 firebase-debug.log
 # vim

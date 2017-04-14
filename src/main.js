@@ -2,10 +2,9 @@
  * File Name: workplace/proj/src/main.js
  * Created By: bobo2007
  * Creation Date: 2017-04-12 13:25:27
- * Last Modified: 2017-04-12 13:25:19
+ * Last Modified: 2017-04-14 17:14:51
  * Purpose: main 入口文件
  */
-
 
 import 'babel-polyfill';
 import 'whatwg-fetch';

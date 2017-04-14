@@ -1,12 +1,12 @@
 /**
-* File Name: workplace/proj/src/router.js
-  * Created By: bobo2007
-  * Creation Date: 2017-04-12 13:24:11
-  * Last Modified: 2017-04-13 15:02:37
-  * Purpose: router
-  */
+ * File Name: workplace/proj/src/router.js
+ * Created By: bobo2007
+ * Creation Date: 2017-04-12 13:24:11
+ * Last Modified: 2017-04-14 17:14:05
+ * Purpose: router
+ */
 
-  import react from 'react';
+import react from 'react';
 
 function decodeParam(val) {
   if (!(typeof val === 'string' || val.length === 0)) {
@@ -47,7 +47,7 @@ function resolve(routes, context) {
     // 检查route中是否有需要请求的数据
     // {path: '/task/:id', data: {task: 'GET /api/tasks/:id'}, page: './pages/task'}
     if (route.data) {
-
+      console.log('123');
     }
   }
 }
