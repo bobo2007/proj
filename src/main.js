@@ -5,7 +5,7 @@
  * Last Modified: 2017-04-15 01:14:23
  * Purpose: main 入口文件
  */
-// test
+
 import 'babel-polyfill';
 import 'whatwg-fetch';
 import React from 'react';
