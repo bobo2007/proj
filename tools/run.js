@@ -36,7 +36,9 @@ module.exports = task('run', () => new Promise((resolve) => {
     // 读取文件字符串
     const template = fs.readFileSync('./public/index.ejs', 'utf8');
     // 将字符串装入，设置要渲染的文件名 ejs.compile(str, options)
-    const render = ejs.compile(template, { filename: './public/index.ejs'});
+    const render = ejs.compile(template, {
+      filename: './public/index.ejs'
+    });
     // 嵌入的数据 str --> rendered HTML string
     const output = render({
       debug: true,
@@ -46,8 +48,8 @@ module.exports = task('run', () => new Promise((resolve) => {
     // 输出为 index.html 文件
     fs.writeFileSync('./public/index.html', output, 'utf8');
     // 打包完成后，启动browsersync
-    count +=1;
-    if(count === 1){
+    count += 1;
+    if (count === 1) {
       bs.init({
         port: process.env.PORT || 3000,
         ui: {
@@ -64,5 +66,4 @@ module.exports = task('run', () => new Promise((resolve) => {
       }, resolve);
     }
   });
-}
-));
+}));

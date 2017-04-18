@@ -2,8 +2,8 @@
  * File Name: workplace/proj/src/router.js
  * Created By: bobo2007
  * Creation Date: 2017-04-12 13:24:11
- * Last Modified: 2017-04-14 20:43:39
- * Purpose: router
+ * Last Modified: 2017-04-18 20:08:44
+ * Purpose: 解析路径并获取路径对应的页面组件及其数据
  */
 
 import react from 'react';
@@ -47,7 +47,15 @@ function resolve(routes, context) {
     // 检查route中是否有需要请求的数据
     // {path: '/task/:id', data: {task: 'GET /api/tasks/:id'}, page: './pages/task'}
     if (route.data) {
-      console.log('123');
+      // 同步加载页面组件和请求数据
+      const keys = Object.keys(route.data);
+      return Promise.all([
+        route.road(),
+        ...keys.map((key) => {
+          const query = route.data[key];
+          const method = query.substring(0, query.indexOf(' '));
+        })
+      ]);
     }
   }
 }

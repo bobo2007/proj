@@ -2,7 +2,7 @@
  * File Name: tools/routes-loader.js
  * Created By: bobo2007
  * Creation Date: 2017-04-12 13:48:57
- * Last Modified: 2017-04-14 01:32:44
+ * Last Modified: 2017-04-18 22:47:54
  * Purpose:
  */
 
@@ -21,6 +21,7 @@ module.exports = function routesLoader(source) {
 
   for (const route of routes) {
     const keys = [];
+    // 路径正则表达式
     const pattern = toRegExp(route.path, keys);
     const require = route.chunk && route.chunk === 'main' ?
       // require 返回一个promise实例
@@ -35,12 +36,12 @@ module.exports = function routesLoader(source) {
       }
     })`;
     output.push('   {\n');
-    output.push(`       path: '${escape(route.path)}',\n`);
-    output.push(`       pattern: ${pattern.toString()},\n`);
-    output.push(`       keys: ${JSON.stringify(keys)},\n`);
-    output.push(`       page: ${route.page},\n`);
+    output.push(`       path: '${escape(route.path)}',\n`); // 字符串
+    output.push(`       pattern: ${pattern.toString()},\n`); // 正则
+    output.push(`       keys: ${JSON.stringify(keys)},\n`); // 对象数组
+    output.push(`       page: '${route.page}',\n`); // 字符串
     if (route.data) {
-      output.push(`       data: ${JSON.stringify(route.data)},\n`);
+      output.push(`       data: ${JSON.stringify(route.data)},\n`); // 对象
     }
     output.push(`       load(){\n     return ${require(route.page)};\n},\n`); // eslint-disable-line import/no-dynamic-require
     output.push('},\n');

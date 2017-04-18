@@ -19,3 +19,5 @@ firebase-debug.log
 Session.vim
 *.swp
 *.swo
+.gitignore
+tags
