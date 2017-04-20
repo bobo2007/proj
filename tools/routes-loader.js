@@ -2,8 +2,8 @@
  * File Name: tools/routes-loader.js
  * Created By: bobo2007
  * Creation Date: 2017-04-12 13:48:57
- * Last Modified: 2017-04-18 22:47:54
- * Purpose:
+ * Last Modified: 2017-04-19 10:01:14
+ * Purpose: routes.json 的加载器
  */
 
 const toRegExp = require('path-to-regexp');
@@ -43,6 +43,7 @@ module.exports = function routesLoader(source) {
     if (route.data) {
       output.push(`       data: ${JSON.stringify(route.data)},\n`); // 对象
     }
+    // 加载页面组件
     output.push(`       load(){\n     return ${require(route.page)};\n},\n`); // eslint-disable-line import/no-dynamic-require
     output.push('},\n');
   }

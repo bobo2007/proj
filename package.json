@@ -8,11 +8,12 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "classnames": "^2.2.5",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
     "fastclick": "^1.0.6",
     "history": "^4.6.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-redux": "^5.0.3",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
@@ -36,8 +37,11 @@
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.10.3",
     "file-loader": "^0.10.1",
+    "front-matter": "^2.1.2",
+    "highlight.js": "^9.10.0",
     "less": "*",
     "less-loader": "*",
+    "markdown-it": "^8.3.1",
     "path-to-regexp": "^1.7.0",
     "react-hot-loader": "^3.0.0-beta.2",
     "rimraf": "^2.6.1",
