@@ -1,0 +1,18 @@
+/**
+ * File Name: ./components/style/mixins/size.less
+ * Created By: bobo2007
+ * Creation Date: 2017-04-20 19:20:54
+ * Last Modified: 2017-04-20 19:22:58
+ * Purpose: 设置width,height
+ */
+
+
+.size(@width,@height){
+  width: @width;
+  height: @height;
+}
+
+// 正方形
+.square(@size){
+  .size(@size,@size);
+}

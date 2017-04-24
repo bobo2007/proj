@@ -1,0 +1,53 @@
+/**
+ * File Name: components/style/mixins/compatibility.less
+ * Created By: bobo2007
+ * Creation Date: 2017-04-20 21:46:58
+ * Last Modified: 2017-04-21 16:52:37
+ * Purpose: Compatibility for browsers.
+ */
+
+// rotate for ie8 and blow
+.ie-rotate(@rotation) {
+  -ms-filter: "progid: DXImageTransform.Microsoft.BasicImage(rotation=@{rotation})";
+}
+
+// rotate for ie8 and blow
+// degree unit
+.ie-rotate-via-degrees(@degrees) {
+  /* IE6 - IE8 */
+  @radians: ~`parseInt("@{degrees}") * Math.PI * 2 / 360`;
+  @costheta: ~`Math.cos("@{radians}")`;
+  @sintheta: ~`Math.sin("@{radians}")`;
+  @negsintheta: ~`Math.sin("@{radians}") * -1`;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+  M11=@{constheta}),M12=@{negsintheta},M21=@{sintheta},M22=@{costheta}";
+  zoom: 1;
+  // 选择器:root 代表根元素html中表示html标签
+  :root & {
+    // css3 filter 与 IE filter不是一回事,css3 filter主要运用在图片上，以实现一些特效。
+    filter: none;
+  }
+}
+
+// support rotate for all browsers
+.cross-rotate(@degrees) {
+  .rotate(@degrees);
+  .ie-rotate-via-degrees(@degrees);
+}
+
+// Placeholder 文本  see http://www.webhek.com/post/html5-placeholder.html
+.placeholder(@color: @input-placeholder-color) {
+  // Firefox
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1; // Firefox中的placeholder text 会有fade out 效果，Adding opacity:1 to it returns it to the proper color; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  // Safari and Chrome
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+}

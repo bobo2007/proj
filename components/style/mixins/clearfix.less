@@ -1,0 +1,21 @@
+/**
+ * File Name: ./components/style/mixins/clearfix.less
+ * Created By: bobo2007
+ * Creation Date: 2017-04-20 18:48:25
+ * Last Modified: 2017-04-20 19:10:02
+ * Purpose: mixins for clearfix
+ */
+
+.clearfix(){
+  zoom: 1;
+  &:before,&:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+}

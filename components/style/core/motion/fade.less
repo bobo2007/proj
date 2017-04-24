@@ -1,0 +1,40 @@
+/**
+ * File Name: components/style/core/motion/fade.less
+ * Created By: bobo2007
+ * Creation Date: 2017-04-22 21:49:02
+ * Last Modified: 2017-04-22 21:52:24
+ * Purpose: 创建淡入淡出效果
+ */
+
+.fade-motion(@className, @keyframeName) {
+  .make-motion(@className, @keyframeName);
+  .@{className}-enter,@{className}-appear {
+    opacity: 0;
+    animation-timing-function: linear;
+  }
+  .@{className}-leave {
+    animation-timing-function: linear;
+  }
+}
+
+
+@keyframes bogeFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bogeFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-motion(fade, bogeFade);
+

@@ -1,0 +1,18 @@
+/**
+ * File Name: components/style/mixins/opacity.less
+ * Created By: bobo2007
+ * Creation Date: 2017-04-20 19:10:40
+ * Last Modified: 2017-04-20 19:18:20
+ * Purpose: 兼容方式设置Opacity
+ */
+
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  // /* IE9 + etc...modern browsers */
+  // opacity: .5;
+  /* IE 4-9 */
+  // filter:alpha(opacity=50);
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}

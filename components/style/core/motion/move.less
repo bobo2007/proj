@@ -1,0 +1,132 @@
+/**
+ * File Name: components/style/core/motion/move.less
+ * Created By: bobo2007
+ * Creation Date: 2017-04-22 22:37:41
+ * Last Modified: 2017-04-23 00:00:30
+ * Purpose: 创建移动动画
+ */
+
+.move-motion (@className, @keyframeName) {
+  .make-motion(@className, @keyframeName);
+  .@{className}-enter,.@{className}-appear {
+    opacity: 0;
+    animation-timing-function: @ease-in-circ;
+  }
+  .@{className}-leave {
+    animation-timing-function: @ease-in-circ;
+  }
+}
+
+// 从下方移入
+@keyframes bogeMoveDownIn {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+// 向下方移出
+@keyframes bogeMoveDownOut {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+// 从上方移入
+@keyfreams bogeMoveUpIn {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+// 向下方移出
+@keyframes bogerMoveUpOut {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+// 从左侧移入
+@keyframes bogeMoveLeftIn {
+  0% {
+    transform-origin: 0 0;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+// 向左侧移出
+@keyframes bogeMoveLeftOut {
+  0% {
+    transform-origin: 0 0;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+// 从右侧移入
+@keyframes bogeMoveRightIn {
+  0% {
+    transform-origin: 0 0;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+// 向右侧移出
+@keyframes bogeMoveRightOut {
+  0% {
+    transform-origin: 0 0;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.move-motion(move-up,bogeMoveUp);
+.move-motion(move-down,bogeMoveDown);
+.move-motion(move-left,bogeMoveLeft);
+.move-motion(move-right,bogeMoveRight);
+
+
+
+

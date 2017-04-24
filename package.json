@@ -8,12 +8,13 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "classnames": "^2.2.5",
-    "react-redux": "^5.0.3",
-    "redux": "^3.6.0",
     "fastclick": "^1.0.6",
     "history": "^4.6.1",
+    "omit.js": "^0.1.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
