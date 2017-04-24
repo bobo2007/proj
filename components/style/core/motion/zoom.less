@@ -1,0 +1,21 @@
+/**
+ * File Name: components/style/core/motion/zoom.less
+ * Created By: bobo2007
+ * Creation Date: 2017-04-24 14:44:10
+ * Last Modified: 2017-04-24 14:44:10
+ * Purpose: 变焦效果
+ */
+
+
+.zoom-motion(@className, @keyframeName, @duration, @animation-duration-base) {
+  .make-motion(@className, @keyframeName, @duration);
+  .@{className}-enter,.@{className}-appear{
+    transform: scale(0);
+    animation-timing-function: @ease-out-circ;
+  }
+  .@{className}-leave{
+    animation-timing-function: @case-in-out-circ;
+  }
+}
+
+

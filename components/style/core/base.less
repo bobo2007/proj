@@ -1,0 +1,106 @@
+/**
+ * File Name: components/style/base.less
+ * Created By: bobo2007
+ * Creation Date: 2017-04-24 14:53:23
+ * Last Modified: 2017-04-24 15:24:15
+ * Purpose: 基础样式
+ */
+
+@import "./normalize.less";
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+
+// HTML & Body reset
+html,body {
+  .square(100%);
+}
+
+body {
+  font-family: @font-family;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-background;
+}
+
+// 统一元素的 margin 和 padding
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  margin: 0;
+  padding: 0;
+}
+
+// 重置相对元素的字体
+button,input,select,textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+ul,ol {
+  list-style: none;
+}
+
+// 移除 IE10  input自带的删除功能
+input::-ms-clear, input::-ms-reveal {
+  display: none;
+}
+
+// 匹配元素中被用户选中或处于高亮状态的部分
+::selection {
+  background: @primary-color;
+  color: #fff;
+}
+
+// 统一链接样式
+a {
+  color: @link-color;
+  // background默认值为 transparent 表示背景颜色应该是透明的
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: point;
+  transition: color .3s ease;
+
+  &:hover {
+    color: @link-hover-color;
+  }
+  &:active {
+    color: @link-active-color;
+  }
+  &:hover, &:active{
+    outline: 0;
+    text-decoration: none;
+  }
+  &[disabled] {
+    color: @disabled-color;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.@{boge-prefix}-divider{
+  margin: 0 6px;
+  dispaly: inline-block;
+  height: 8px;
+  width: 1px;
+  background: #ccc;
+}
+
+code, pre, kbd, samp {
+  font-family: @code-family;
+}
+
+// 工具class
+.clearfix {
+  .clearfix();
+}
+
