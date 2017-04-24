@@ -1,9 +1,79 @@
 /**
  * File Name: components/style/core/motion/slide.less
  * Created By: bobo2007
- * Creation Date: 2017-04-24 11:09:15
- * Last Modified: 2017-04-24 11:09:15
+ * Creation Date: 2017-04-24 11:29:57
+ * Last Modified: 2017-04-24 11:37:05
  * Purpose: slide css
  */
+
+.slide-motion(@className, @keyframeName) {
+  .make-motion(@className, @keyframeName);
+  .@{className}-enter,.@{className}-appear{
+    opacity: 0;
+    animation-timing-function: @ease-in-quint;
+  }
+  .@{className}-leave{
+    animation-timing-function: @ease-out-quint;
+  }
+}
+
+.slide-motion(slide-up,bogeSlideUp);
+.slide-motion(slide-down,bogeSlideDown);
+
+@keyframes bogeSlideUpIn {
+  0% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(.8);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
+  }
+}
+
+@keyfreams bogeSlideUpOut {
+  0% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(.8);
+  }
+}
+
+@keyframes bogeSlideDownIn{
+  0% {
+    opacity: 0;
+    transform-origin: 100% 100%;
+    transform: scaleY(.8)
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 100% 100%;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes bogeSlideDownOut{
+  0% {
+    opacity: 1;
+    transform-origin: 100% 100%;
+    transform: scaleY(1)
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 100% 100%;
+    transform: scaleY(.8);
+  }
+}
+
+// TODO:  bogeSlideLeft  bogeSlideRight
+
+
 
 
