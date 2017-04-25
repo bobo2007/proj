@@ -2,7 +2,7 @@
  * File Name: components/layout/layout.js
  * Created By: bobo2007
  * Creation Date: 2017-04-20 13:29:28
- * Last Modified: 2017-04-24 11:49:05
+ * Last Modified: 2017-04-24 19:35:57
  * Purpose:
  */
 
@@ -35,7 +35,7 @@ class Basic extends React.Component{
       [`${prefixCls}-has-sider`]: hasSider,
     });
     return (
-      <div className={divCls} {...others}>{childern}</div>
+      <div className={divCls} {...others}>{children}</div>
     );
   }
 }
