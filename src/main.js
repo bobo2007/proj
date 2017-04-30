@@ -2,7 +2,7 @@
  * File Name: workplace/proj/src/main.js
  * Created By: bobo2007
  * Creation Date: 2017-04-12 13:25:27
- * Last Modified: 2017-04-20 13:20:36
+ * Last Modified: 2017-04-30 11:27:26
  * Purpose: main 入口文件
  */
 
@@ -20,7 +20,6 @@ import history from './history';
 let routes = require('./routes.json').default;
 
 const container = document.getElementById('container');
-
 function renderComponent(component) {
   // ReactDom.render(<Provider store={store}>{component}</Provider>, container);
   ReactDom.render(<div>{component}</div>, container);
@@ -29,10 +28,10 @@ function renderComponent(component) {
 // 找到并渲染跟路径匹配的页面,如果不存在渲染error页面
 function render(location) {
   router.resolve(routes, location)
-  .then(renderComponent)
-  .catch(error => router.resolve(routes, { ...location,
-                                 error
-  }).then(renderComponent));
+    .then(renderComponent)
+    .catch(error => router.resolve(routes, { ...location,
+      error
+    }).then(renderComponent));
 }
 
 //  Listen for changes to the current location using history.listen
