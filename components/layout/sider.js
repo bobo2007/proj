@@ -2,7 +2,7 @@
  * File Name: components/layout/sider.js
  * Created By: bobo2007
  * Creation Date: 2017-04-20 16:01:10
- * Last Modified: 2017-05-10 12:12:38
+ * Last Modified: 2017-05-19 15:44:08
  * Purpose: 可收起的侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中
  */
 
@@ -82,7 +82,7 @@ export default class Sider extends React.Component{
     const siderWidth = this.state.collapsed ? collapsedWidth : width;
     const zeroWidthTrigger = collapsedWidth === 0 || collapsedWidth  === '0' ? (
       <span onClick={this.toggle} classname={`${prefixCls}-zero-width-trigger`}>
-        <Icon type="bars" />
+      <Icon type="bars" />
       </span>
     ) : null;
 
@@ -94,11 +94,11 @@ export default class Sider extends React.Component{
     const defaultTrigger = iconObj[status];
 
     const triggerDom = (
-      trigger  !== null ? zeroWidthTrigger || (
-          <div className={`${prefixCls}-trigger`} onClick={this.toggle}>
-            {trigger || defaultTrigger}
-          </div>
-        ) : null);
+    trigger  !== null ? zeroWidthTrigger || (
+      <div className={`${prefixCls}-trigger`} onClick={this.toggle}>
+      {trigger || defaultTrigger}
+      </div>
+    ) : null);
     const divStyle = {
       ...style,
       flex: `0 0 ${siderWidth}px`,
@@ -112,8 +112,8 @@ export default class Sider extends React.Component{
     });
     return (
       <div className={siderCls} {...divProps} style={divStyle}>
-        {this.props.children}
-        {collapsible || (this.state.below && zeroWidthTrigger) ? triggerDom : null}
+      {this.props.children}
+      {collapsible || (this.state.below && zeroWidthTrigger) ? triggerDom : null}
       </div>
     );
   }
