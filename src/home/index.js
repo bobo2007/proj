@@ -2,7 +2,7 @@
  * File Name: src/home/index.js
  * Created By: bobo2007
  * Creation Date: 2017-04-19 15:52:39
- * Last Modified: 2017-05-05 13:58:31
+ * Last Modified: 2017-05-20 18:00:20
  * Purpose: home 首页
  */
 
@@ -12,7 +12,7 @@ import './../../components/layout/style/index.less';
 import './../../components/layout/style/demo.less';
 import Layout from '../../components/layout';
 
-const { Header, Footer, Content } = Layout;
+const { Header, Footer, Content, Sider } = Layout;
 
 class HomePage extends React.Component {
   componentDidMount() {
@@ -23,6 +23,7 @@ class HomePage extends React.Component {
         <div id='components-layout-demo-basic'>
           <Layout>
             <Header>Header</Header>
+            <sider>sider</sider>
             <Content>Content</Content>
             <Footer>Footer</Footer>
           </Layout>
