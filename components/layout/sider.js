@@ -2,7 +2,7 @@
  * File Name: components/layout/sider.js
  * Created By: bobo2007
  * Creation Date: 2017-04-20 16:01:10
- * Last Modified: 2017-05-19 15:44:08
+ * Last Modified: 2017-05-21 09:15:50
  * Purpose: 可收起的侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中
  */
 
@@ -104,6 +104,7 @@ export default class Sider extends React.Component{
       flex: `0 0 ${siderWidth}px`,
       width: `${siderWidth}px`
     };
+    // sider class
     const siderCls = classNames(className, prefixCls, {
       [`${prefixCls}-collapsed`] : !!this.state.collapsed,
       [`${prefixCls}-has-trigger`]: !!trigger,
