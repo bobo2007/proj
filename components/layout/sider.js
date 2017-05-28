@@ -2,8 +2,8 @@
  * File Name: components/layout/sider.js
  * Created By: bobo2007
  * Creation Date: 2017-04-20 16:01:10
- * Last Modified: 2017-05-21 09:15:50
- * Purpose: 可收起的侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中
+ * Last Modified: 2017-05-25 22:30:35
+ * Purpose: 可收起的侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中.
  */
 
 import React from 'react' ;
@@ -86,6 +86,7 @@ export default class Sider extends React.Component{
       </span>
     ) : null;
 
+    // 折叠状态 icon
     const iconObj = {
       'expand': reverseArrow ? <Icon type="right" /> : <Icon type="left" />,
       'collapsed': reverseArrow ? <Icon type="left" /> : <Icon type="right" />
@@ -94,11 +95,12 @@ export default class Sider extends React.Component{
     const defaultTrigger = iconObj[status];
 
     const triggerDom = (
-    trigger  !== null ? zeroWidthTrigger || (
-      <div className={`${prefixCls}-trigger`} onClick={this.toggle}>
-      {trigger || defaultTrigger}
-      </div>
-    ) : null);
+      trigger  !== null ? zeroWidthTrigger || (
+        <div className={`${prefixCls}-trigger`} onClick={this.toggle}>
+        {trigger || defaultTrigger}
+        </div>
+      ) : null
+    );
     const divStyle = {
       ...style,
       flex: `0 0 ${siderWidth}px`,
