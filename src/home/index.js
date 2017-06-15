@@ -2,7 +2,7 @@
  * File Name: src/home/index.js
  * Created By: bobo2007
  * Creation Date: 2017-04-19 15:52:39
- * Last Modified: 2017-05-20 19:24:10
+ * Last Modified: 2017-06-14 09:41:57
  * Purpose: home 首页
  */
 
@@ -23,7 +23,7 @@ class HomePage extends React.Component {
         <div id='components-layout-demo-basic'>
           <Layout>
             <Header>Header</Header>
-            <sider>sider</sider>
+            <Sider>sider</Sider>
             <Content>Content</Content>
             <Footer>Footer</Footer>
           </Layout>
