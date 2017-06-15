@@ -2,13 +2,15 @@
  * File Name: components/layout/sider.js
  * Created By: bobo2007
  * Creation Date: 2017-04-20 16:01:10
- * Last Modified: 2017-05-25 22:30:35
+ * Last Modified: 2017-06-06 16:53:57
  * Purpose: 可收起的侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中.
  */
 
 import React from 'react' ;
 import classNames from 'classnames';
 import omit from 'omit.js';
+
+console.log('sider');
 
 const dimensionMap = {
   xs: '480px',
