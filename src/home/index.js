@@ -2,7 +2,7 @@
  * File Name: src/home/index.js
  * Created By: bobo2007
  * Creation Date: 2017-04-19 15:52:39
- * Last Modified: 2017-06-15 22:57:08
+ * Last Modified: 2017-06-16 23:48:24
  * Purpose: home 首页
  */
 
@@ -15,19 +15,24 @@ import Layout from '../../components/layout';
 const { Header, Footer, Content, Sider } = Layout;
 
 class HomePage extends React.Component {
+  state = {
+    collapsed: false,
+    mode: 'inline'
+  };
   componentDidMount() {
     document.title = title;
   }
   render() {
-    return  (<div>
+    return  (
         <div id='components-layout-demo-basic'>
-          <Layout>
-            <Header>Header</Header>
-            <Sider>sider</Sider>
-            <Content>Content</Content>
-            <Footer>Footer</Footer>
+          <Layout className="boge-layout-has-sider">
+            <Sider  collapsible collapsed={this.state.collapsed}>sider</Sider>
+            <Layout>
+              <Header>Header</Header>
+              <Content>Content</Content>
+              <Footer>Footer</Footer>
+            </Layout>
           </Layout>
-        </div>
       </div>);
   }
 }
