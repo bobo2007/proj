@@ -2,7 +2,7 @@
  * File Name: components/layout/sider.js
  * Created By: bobo2007
  * Creation Date: 2017-04-20 16:01:10
- * Last Modified: 2017-06-16 20:57:37
+ * Last Modified: 2017-06-17 10:51:14
  * Purpose: 可收起的侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中.
  */
 
@@ -142,11 +142,7 @@ export default class Sider extends React.Component{
       [`${prefixCls}-zero-width`]: siderWidth  === 0 || siderWidth  === '0'
     });
     return (
-      // <div className={siderCls} {...divProps} style={divStyle}>
-      // {this.props.children}
-      // {collapsible || (this.state.below && zeroWidthTrigger) ? triggerDom : null}
-      // </div>
-      <div className={siderCls} style={divStyle}>
+      <div className={siderCls} {...divProps} style={divStyle}>
         {this.props.children}
         {collapsible || (this.state.below && zeroWidthTrigger) ? triggerDom : null}
       </div>
